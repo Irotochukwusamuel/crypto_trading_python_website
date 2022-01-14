@@ -20,7 +20,7 @@ db_username = 'root'
 db_password = ''
 
 # database_name = 'prorocke_logistics'
-# db_host = 'localhost'
+# db_host = 'localhost_sasaj'
 # db_username = 'prorocke_root'
 # db_password = '-%f5jPAfcJ&H'
 
