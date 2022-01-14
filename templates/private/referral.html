@@ -1,0 +1,71 @@
+{% extends 'private/base.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <h2 class="intro-y text-lg font-medium mt-10">Referral</h2>
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-no-wrap items-center mt-2">
+        <div class="mr-2 mx-auto text-gray-600 sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">Invite a friend to
+            invest using your referral code
+        </div>
+        <div class="hidden md:block mx-auto text-gray-600 ">Refer someone and earn</div>
+        <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
+            <div id="__ref" class="w-56 relative text-gray-700"><input title="referral code" disabled=""
+                                                                       type="text"
+                                                                       class="input w-56 box pr-10 placeholder-theme-13"
+                                                                       placeholder="Search..."
+                                                                       value="{{ dashboard_details["my_ref"] }}">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round"
+                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4 cursor-pointer absolute my-auto inset-y-0 mr-3 right-0">
+                    <rect width="13" height="13" x="9" y="9" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    {% if ref == 'empty' %}
+        <div class="flex flex-col">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                 stroke-linejoin="round" class="StyledIconBase-ea9ulj-0 hPhvO w-16 h-16 text-theme-1 mx-auto mt-5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" x2="12" y1="16" y2="12"></line>
+                <line x1="12" x2="12.01" y1="8" y2="8"></line>
+            </svg>
+            <p class="text-gray-600 mx-auto mt-5">You have not referred anyone yet!</p>
+        </div>
+
+    {% endif %}
+
+    <div class="mt-8">
+        <span class="button w-56 rounded-full mr-1 mb-2 bg-theme-14 text-theme-10 font-medium">All Referral List: {{ dashboard_details["total_ref"] }}</span>
+        {% if ref != 'empty' %}
+
+            <table class="table lms_table_active3 " style="margin-top: 30px">
+                <thead style="background-color: #0d0d0d; color: white">
+                <tr>
+                    <th scope="col" style="font-size: 13px;letter-spacing: 0.5px">ID</th>
+                    <th scope="col" style="font-size: 13px;letter-spacing: 0.5px">Name</th>
+                    <th scope="col" style="font-size: 13px;letter-spacing: 0.5px">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for x in ref %}
+                    <tr style="border-bottom: 1px solid lightgrey">
+                        <td style="font-size: 13px;letter-spacing: 0.5px">{{ loop.index }}</td>
+                        <td style="font-size: 13px;letter-spacing: 0.5px">
+                            {{ x["name"] }}
+                        </td>
+                        <td style="font-size: 13px;letter-spacing: 0.5px">{{ x["email"] }}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        {% endif %}
+
+    </div>
+{% endblock %}

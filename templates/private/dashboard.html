@@ -1,0 +1,210 @@
+{% extends 'private/base.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="intro-y flex items-center mt-8">
+        <h2 class="text-lg font-medium mr-auto">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                 stroke-linejoin="round" class="StyledIconBase-ea9ulj-0 hPhvO w-8 h-8 mr-3 text-theme-1">
+                <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z"></path>
+            </svg>
+            Your Investment Statistics
+        </h2>
+        <a href="/dashboard" class="ml-auto flex text-theme-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                 stroke-linejoin="round" class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4 mr-3">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <polyline points="23 20 23 14 17 14"></polyline>
+                <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"></path>
+            </svg>
+            Reload Data</a></div>
+    <div class="grid grid-cols-12 gap-6 mt-8">
+        <div class="col-span-12 sm:col-span-6 lg:col-span-6 xxl:col-span-3 intro-y"><a
+                href="/user-investment">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background-color: #1a1a85;color: white !important;">
+                    <div class="flex">
+                        <svg style="color: white" viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-theme-10">
+                            <rect width="384" height="256" x="64" y="176" fill="none" stroke="currentColor"
+                                  stroke-linejoin="round" stroke-width="32" rx="28.87" ry="28.87"></rect>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                  stroke-width="32" d="M144 80h224m-256 48h288"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-theme-1 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg  style="color: white" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+                                     stroke-linecap="round" stroke-linejoin="round"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6">{{ dashboard_details["investments"]["investment"] }}.0</div>
+                    <div class="text-base text-gray-600 mt-1" style="color: white">Your Investment</div>
+                </div>
+            </div>
+        </a></div>
+        <div class="col-span-12 sm:col-span-6 lg:col-span-6 xxl:col-span-3 intro-y"><a
+                href="/user-investment">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background-color: #1a1a85;color: white !important;">
+                    <div class="flex">
+                        <svg  style="color: white" viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-theme-10">
+                            <rect width="384" height="256" x="64" y="176" fill="none" stroke="currentColor"
+                                  stroke-linejoin="round" stroke-width="32" rx="28.87" ry="28.87"></rect>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                  stroke-width="32" d="M144 80h224m-256 48h288"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg style="color: white" viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M464 128L240 384l-96-96m0 96l-96-96m320-160L232 284"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6">{{ dashboard_details["investments"]["active"] }}</div>
+                    <div class="text-base text-gray-600 mt-1 " style="color: white">Active Investment</div>
+                </div>
+            </div>
+        </a></div>
+        <div class="col-span-12 sm:col-span-6 lg:col-span-6 xxl:col-span-3 intro-y"><a href="/referral">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background-color: #1a1a85;color: white !important;">
+                    <div class="flex">
+                        <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-theme-11">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="32"
+                                  d="M402 168c-2.93 40.67-33.1 72-66 72s-63.12-31.32-66-72c-3-42.31 26.37-72 66-72s69 30.46 66 72z"></path>
+                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
+                                  d="M336 304c-65.17 0-127.84 32.37-143.54 95.41-2.08 8.34 3.15 16.59 11.72 16.59h263.65c8.57 0 13.77-8.25 11.72-16.59C463.85 335.36 401.18 304 336 304z"></path>
+                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="32"
+                                  d="M200 185.94c-2.34 32.48-26.72 58.06-53 58.06s-50.7-25.57-53-58.06C91.61 152.15 115.34 128 147 128s55.39 24.77 53 57.94z"></path>
+                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                  stroke-miterlimit="10" stroke-width="32"
+                                  d="M206 306c-18.05-8.27-37.93-11.45-59-11.45-52 0-102.1 25.85-114.65 76.2-1.65 6.66 2.53 13.25 9.37 13.25H154"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-theme-11 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <path d="M256 464c-114.69 0-208-93.31-208-208S141.31 48 256 48s208 93.31 208 208-93.31 208-208 208zm0-384c-97 0-176 79-176 176s79 176 176 176 176-78.95 176-176S353.05 80 256 80z"></path>
+                                    <path d="M323.67 292c-17.4 0-34.21-7.72-47.34-21.73a83.76 83.76 0 01-22-51.32c-1.47-20.7 4.88-39.75 17.88-53.62S303.38 144 323.67 144c20.14 0 38.37 7.62 51.33 21.46s19.47 33 18 53.51a84 84 0 01-22 51.3C357.86 284.28 341.06 292 323.67 292zm55.81-74zm-215.66 77.36c-29.76 0-55.93-27.51-58.33-61.33-1.23-17.32 4.15-33.33 15.17-45.08s26.22-18 43.15-18 32.12 6.44 43.07 18.14 16.5 27.82 15.25 45c-2.44 33.77-28.6 61.27-58.31 61.27zm256.55 59.92c-1.59-4.7-5.46-9.71-13.22-14.46-23.46-14.33-52.32-21.91-83.48-21.91-30.57 0-60.23 7.9-83.53 22.25-26.25 16.17-43.89 39.75-51 68.18-1.68 6.69-4.13 19.14-1.51 26.11a192.18 192.18 0 00232.75-80.17zm-256.74 46.09c7.07-28.21 22.12-51.73 45.47-70.75a8 8 0 00-2.59-13.77c-12-3.83-25.7-5.88-42.69-5.88-23.82 0-49.11 6.45-68.14 18.17-5.4 3.33-10.7 4.61-14.78 5.75a192.84 192.84 0 0077.78 86.64l1.79-.14a102.82 102.82 0 013.16-20.02z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6">{{ dashboard_details["investments"]["referral"] }}.0</div>
+                    <div class="text-base text-gray-600 mt-1" style="color: white">Total Referral</div>
+                </div>
+            </div>
+        </a></div>
+        <div class="col-span-12 sm:col-span-6 lg:col-span-6 xxl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background-color: #1a1a85;color: white !important;">
+                    <div class="flex">
+                        <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-theme-9">
+                            <rect width="416" height="288" x="48" y="144" fill="none" stroke="currentColor"
+                                  stroke-linejoin="round" stroke-width="32" rx="48" ry="48"></rect>
+                            <path fill="none" stroke="currentColor" stroke-linejoin="round"
+                                  stroke-width="32"
+                                  d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49"></path>
+                            <path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-theme-9 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <rect width="448" height="256" x="32" y="80" fill="none"
+                                          stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                          rx="16" ry="16" transform="rotate(180 256 208)"></rect>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M64 384h384M96 432h320"></path>
+                                    <circle cx="256" cy="208" r="80" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="32"></circle>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M480 160a80 80 0 01-80-80M32 160a80 80 0 0080-80m368 176a80 80 0 00-80 80M32 256a80 80 0 0180 80"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6">
+                        ${{ dashboard_details["investments"]["invest_made"] }}</div>
+                    <div class="text-base text-gray-600 mt-1" style="color: white">Investment Made</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 sm:col-span-6 lg:col-span-12 xxl:col-span-3 intro-y"><a
+                href="/withdrawal-request">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background: rgb(31 22 112)">
+                    <div class="flex">
+                        <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-white">
+                            <rect width="416" height="288" x="48" y="144" fill="none" stroke="currentColor"
+                                  stroke-linejoin="round" stroke-width="32" rx="48" ry="48"></rect>
+                            <path fill="none" stroke="currentColor" stroke-linejoin="round"
+                                  stroke-width="32"
+                                  d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49"></path>
+                            <path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-white text-theme-9 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <rect width="448" height="256" x="32" y="80" fill="none"
+                                          stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                          rx="16" ry="16" transform="rotate(180 256 208)"></rect>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M64 384h384M96 432h320"></path>
+                                    <circle cx="256" cy="208" r="80" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="32"></circle>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M480 160a80 80 0 01-80-80M32 160a80 80 0 0080-80m368 176a80 80 0 00-80 80M32 256a80 80 0 0180 80"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6 text-white">
+                        ${{ dashboard_details["investments"]["balance"] }}.0
+                    </div>
+                    <div class="text-base text-gray-200 mt-1">Wallet Balance</div>
+                </div>
+            </div>
+        </a></div>
+    </div>
+{% endblock %}

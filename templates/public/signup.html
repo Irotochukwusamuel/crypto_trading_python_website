@@ -1,0 +1,116 @@
+{% extends 'public/privatebase.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div id="app" app-page="signup">
+        <div class="container sm:px-10">
+            <div class="block xl:grid grid-cols-2 gap-4">
+                <div class="hidden xl:flex flex-col min-h-screen"><a href="/"
+                                                                     class="-intro-x flex items-center pt-5"><img
+                        alt="Investment bot" class="w-8" src="/static/private/dist/images/favicon.png"><span
+                        class="text-white text-lg ml-3">Ocowry <span class="font-bold"></span></span></a>
+                    <div class="my-auto"><img alt="investment bot" class="-intro-x w-3/4 -mt-16"
+                                              src="/static/private/dist/images/bg-login.svg">
+                        <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">A few more clicks
+                            to<br>sign
+                            in to your account.
+                        </div>
+                        <div class="-intro-x mt-5 text-lg text-white">Manage all your investment in one place</div>
+                    </div>
+                </div>
+                <div class="h-screen xl:h-auto flex pb-5 xl:py-0  xl:my-0">
+                    <div class="my-auto mx-auto xl:ml-20 bg-white xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-3/4 xl:w-3/4" style="overflow: auto;height: 100%">
+                        <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">Create an
+                            account</h2>
+                        <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to
+                            your
+                            account. Manage all your investment in one place
+                        </div>
+  <form SignupForm>
+                            <div firstslide>
+                                <div class="intro-x mt-8">
+                                    <div class="intro-x"><label for="fname">Firstname</label>
+
+                                        <input type="text"
+                                               id="fname"
+                                               class=" input mb-4 w-full input--lg border border-gray-300"
+                                               placeholder="Firstname"
+                                               name="fname" required>
+                                        <label
+                                                for="lname">Lastname</label><input
+                                                type="text" id="lname"
+                                                class=" input w-full input--lg border border-gray-300 block mb-4"
+                                                placeholder="Lastname" value="" name="lname" required><label
+                                                for="email">Email
+                                            Address</label><input
+                                                type="text"
+                                                class=" input w-full input--lg border border-gray-300 block mb-4"
+                                                name="email" id="email" placeholder="Email Address" required>
+
+
+                                    </div>
+                                </div>
+                                <div class="intro-x">
+
+                                    <label for="referral_code">Referral Code</label><input type="text"
+                                                                                           class=" input w-full input--lg border border-gray-300 block mb-4"
+                                                                                           name="referral" id="referral"
+                                                                                           title="referral"
+                                                                                           placeholder="Referral Code (Optional)">
+                                    <label for="password">Password</label><input name="password" type="password"
+                                                                                 id="password"
+                                                                                 class=" input w-full input--lg border border-gray-300 block mb-4"
+                                                                                 placeholder="Password" value=""
+                                                                                 required><label
+                                        for="cpassword">Confirm Password</label><input type="password"
+                                                                                       id="cpassword"
+                                                                                       class=" input w-full input--lg border border-gray-300 block mb-4"
+                                                                                       placeholder="Confirm Password"
+                                                                                       value="" required></div>
+
+                                <div class="intro-y">
+                                    <div class="flex items-center text-gray-700 mt-4 text-xs sm:text-sm"><input
+                                            type="checkbox" class="input border mr-2" id="remember-me"><label
+                                            class="cursor-pointer select-none" for="remember-me">I agree to the
+                                        Ocowry
+                                    </label><a class="text-theme-1 ml-1" href="/">Privacy Policy</a>.
+                                    </div>
+                                    <div class="mt-5 xl:mt-8 text-center xl:text-left">
+                                        <button type="submit"
+                                                class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">
+                                            Register
+                                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+                                                 stroke-linecap="round" stroke-linejoin="round"
+                                                 class="StyledIconBase-ea9ulj-0 hPhvO ml-3 h-6">
+                                                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                                                <circle cx="8.5" cy="7" r="4"></circle>
+                                                <line x1="20" x2="20" y1="8" y2="14"></line>
+                                                <line x1="23" x2="17" y1="11" y2="11"></line>
+                                            </svg>
+                                        </button>
+                                        <a type="button" href="/login"
+                                           class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round"
+                                                 class="StyledIconBase-ea9ulj-0 hPhvO mr-3 h-6 text-theme-1">
+                                                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"></path>
+                                                <polyline points="10 17 15 12 10 7"></polyline>
+                                                <line x1="15" x2="3" y1="12" y2="12"></line>
+                                            </svg>
+                                            Sign in
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

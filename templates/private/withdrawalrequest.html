@@ -1,0 +1,65 @@
+{% extends 'private/base.html' %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="intro-y flex items-center mt-8"><h2 class="text-lg font-medium mr-auto">Withdrawal History</h2>
+        <button class="button mr-2 mb-2 flex items-center border justify-center shadow-lg bg-theme-1 text-white"
+                new_request style="border-radius: 2em">
+            New Request
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                 stroke-linejoin="round" class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4 ml-2">
+                <line x1="12" x2="12" y1="5" y2="19"></line>
+                <line x1="5" x2="19" y1="12" y2="12"></line>
+            </svg>
+        </button>
+    </div>
+    <div class="grid grid-cols-12 gap-6 my-6" withdrawal_content>
+        <div class="col-span-12 sm:col-span-6 lg:col-span-4 xxl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+                <div class="box p-5" style="background:#1a1a85;">
+                    <div class="flex">
+                        <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-ea9ulj-0 hPhvO report-box__icon text-white">
+                            <rect width="416" height="288" x="48" y="144" fill="none" stroke="currentColor"
+                                  stroke-linejoin="round" stroke-width="32" rx="48" ry="48"></rect>
+                            <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                  d="M411.36 144v-30A50 50 0 00352 64.9L88.64 109.85A50 50 0 0048 159v49"></path>
+                            <path d="M368 320a32 32 0 1132-32 32 32 0 01-32 32z"></path>
+                        </svg>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-white text-theme-9 tooltip cursor-pointer"
+                                 title="33% Higher than last month">
+                                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                     class="StyledIconBase-ea9ulj-0 hPhvO w-4 h-4">
+                                    <rect width="448" height="256" x="32" y="80" fill="none"
+                                          stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                          rx="16" ry="16" transform="rotate(180 256 208)"></rect>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M64 384h384M96 432h320"></path>
+                                    <circle cx="256" cy="208" r="80" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="32"></circle>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="32"
+                                          d="M480 160a80 80 0 01-80-80M32 160a80 80 0 0080-80m368 176a80 80 0 00-80 80M32 256a80 80 0 0180 80"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold leading-8 mt-6 text-white" wallet_balance="{{ dashboard_details["balance"] }}">
+                        ${{ dashboard_details["balance"] }}.0
+                    </div>
+                    <div class="text-base text-gray-200 mt-1">Wallet Balance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid flex-col" withdrawal_list>
+
+    </div>
+{% endblock %}
