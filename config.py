@@ -2,27 +2,22 @@
 import math
 import os
 import time
-
 import bleach
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # THE APP NAME
 admin_id = "admin"
-admin_email = "ocowry@gmail.com"
+admin_email = "admin_email"
 
 # THE DATABASE NAME
-database_name = 'vestnance'
+database_name = 'your_database_name'
 db_host = 'localhost'
-db_username = 'root'
-db_password = ''
+db_username = 'your_database_username'
+db_password = 'your_database_password'
 
-# database_name = 'prorocke_logistics'
-# db_host = 'localhost'
-# db_username = 'prorocke_root'
-# db_password = '-%f5jPAfcJ&H'
+
 
 user_cookie = "crz_"
 
@@ -30,102 +25,6 @@ image_save_location = "static/upload/"
 chat_save_location = "static/chat/"
 
 
-def sendMail(to, subject, content):
-    message = Mail(
-        from_email='ocowry@gmail.com',
-        to_emails=f'{to}',
-        subject=f'{subject}',
-        html_content=f'<div style="width: 90%;margin: auto;border: 1px solid lightgray; background: white;height: '
-                     f'55vh;"><div style="height: 90px;background: #424242;color: '
-                     f'white;font-size: 23px;'
-                     f'font-family: sans-serif;letter-spacing: 0.5px;text-align: '
-                     f'center;display:table-cell;vertical-align: middle;width:100vw;"> '
-                     f'{subject}</div><p style="padding: 20px;font-family: sans-serif;letter-spacing: '
-                     f'0.5px;color: #464141; font-size:15px;">Hello,</p><div style="padding: 0 20px 20px 20px;"><p '
-                     f'style="font-family: sans-serif;letter-spacing: 0.5px;color: #464141; font-size: '
-                     f'15px;margin-bottom: 10px;"> {content}</p></div'
-                     f'></div>')
-    try:
-        sg = SendGridAPIClient("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")
-        response = sg.send(message)
-        print(response.status_code)
-    except Exception as e:
-        return True
-
-
-def WelcomeMail(to, subject, name):
-    message = Mail(
-        from_email='ocowry@gmail.com',
-        to_emails=f'{to}',
-        subject=f'{subject}',
-        html_content=f'<div style="width: 90%;margin: auto;border: 1px solid lightgray; background: white;height: '
-                     f'55vh;"><div style="height: 90px;background: linear-gradient(to right, purple , blue);color: '
-                     f'white;font-size: 23px;'
-                     f'font-family: sans-serif;letter-spacing: 0.5px;text-align: '
-                     f'center;display:table-cell;vertical-align: middle;width:100vw;"> '
-                     f'Welcome to Ocowry</div><p style="padding: 20px;font-family: sans-serif;letter-spacing: '
-                     f'0.5px;color: #464141; font-size:15px;">Hi {name},</p><div style="padding: 0 20px 20px 20px;"><p '
-                     f'style="font-family: sans-serif;letter-spacing: 0.5px;color: #464141; font-size: '
-                     f'15px;margin-bottom: 10px;">Thanks for signing up with Ocowry! <br> Click on the link below '
-                     f' to get started on amazing Investment plans with Ocowry! </p> <a href = '
-                     f'"https://www.ocowry.com/user-investment"style="color: inherit;text-decoration: '
-                     f'underline;letter-spacing: 0.5px;font-size:15px;">https://ocowry.com/user-investment</a></div'
-                     f'></div>')
-
-    try:
-        sg = SendGridAPIClient("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")
-        response = sg.send(message)
-        print(response.status_code)
-    except Exception as e:
-        return True
-
-
-def GettingStartedMail(to, subject, name):
-    message = Mail(
-        from_email='ocowry@gmail.com',
-        to_emails=f'{to}',
-        subject=f'{subject}',
-        html_content=f'<div style="width: 90%;margin: auto;border: 1px solid lightgray; background: white;height: '
-                     f'100%;"><div style="height: 90px;background:#424242;color: '
-                     f'white;font-size: 23px;'
-                     f'font-family: sans-serif;letter-spacing: 0.5px;text-align: '
-                     f'center;display:table-cell;vertical-align: middle;width:100vw;"> '
-                     f'Getting Started</div><p style="padding: 20px;font-family: sans-serif;letter-spacing: '
-                     f'0.5px;color: #464141; font-size:15px;">Hi {name},</p><div style="padding: 0 20px 20px 20px;"><p '
-                     f'style="font-family: sans-serif;letter-spacing: 0.5px;color: #464141; font-size: '
-                     f'15px;margin-bottom: 10px;">We are here to help you invest wisely in crypto and stock from '
-                     f'anywhere in the world. All you have to do is '
-                     f'choose from any of our amazing invesment plan below</p>'
-                     f'<ul><li style="list-style: disc;font-size: 15px;font-family: sans-serif;font-weight: '
-                     f'bold;margin: 10px 0;"><a href="https://www.ocowry.com/user-investment" style="text-decoration: '
-                     f'none;color: black;letter-spacing: 0.5px;font-family: sans-serif">Starter Plan (3 days '
-                     f'Plan)</a></li><li style="list-style: disc;font-size: 15px;font-family: sans-serif;font-weight: '
-                     f'bold;margin: 10px 0;"><a href="https://www.ocowry.com/user-investment" style="text-decoration: '
-                     f'none;color: black;letter-spacing: 0.5px;font-family: sans-serif">Super promo Plan (3 days '
-                     f'Plan)</a></li><li style="list-style: disc;font-size: 15px;font-family: sans-serif;font-weight: '
-                     f'bold;margin: 10px 0;"><a href="https://www.ocowry.com/user-investment" style="text-decoration: '
-                     f'none;color: black;letter-spacing: 0.5px;font-family: sans-serif">Advanced Plan (5 days '
-                     f'Plan)</a></li><li style="list-style: disc;font-size: 15px;font-family: sans-serif;font-weight: '
-                     f'bold;margin: 10px 0;"><a href="https://www.ocowry.com/user-investment" style="text-decoration: '
-                     f'none;color: black;letter-spacing: 0.5px;font-family: sans-serif">Classic Plan (6 days '
-                     f'Plan)</a></li><li style="list-style: disc;font-size: 15px;font-family: sans-serif;font-weight: '
-                     f'bold;margin: 10px 0;"><a href="https://www.ocowry.com/user-investment" style="text-decoration: '
-                     f'none;color: black;letter-spacing: 0.5px;font-family: sans-serif">Professional Plan (10 days '
-                     f'Plan)</a></li></ul> '
-                     f' <a href = '
-                     f'"https://www.ocowry.com/user-investment"style="color: inherit;text-decoration: '
-                     f'underline;letter-spacing: 0.5px;font-size:15px;">https://ocowry.com/user-investment</a>'
-                     f'<p style="font-family: sans-serif;letter-spacing: 0.5px;color: #464141;font-size: 14px;margin: '
-                     f'40px 0;">Thanks for choosing Ocowry!</p> '
-                     f'</div'
-                     f'></div>')
-
-    try:
-        sg = SendGridAPIClient("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")
-        response = sg.send(message)
-        print(response.status_code)
-    except Exception as e:
-        return True
 
 
 # CLEANING USER INPUT
