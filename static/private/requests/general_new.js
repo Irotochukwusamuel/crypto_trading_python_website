@@ -518,14 +518,14 @@ $(document).ready(function () {
 
             let dbp = {
                 "name": 'James Page',
-                "email": 'james.page@ocowry.com',
+                "email": 'example@gmail.com',
                 'num': '02012365478',
                 'position': "Position: Digital Asset Consultant",
                 "image": "/static/private/managers/klklas.jpg"
             }
             let dbp1 = {
-                "name": 'Ocowry Admin',
-                "email": 'info@ocowry.com',
+                "name": 'example Admin',
+                "email": 'info@example.com',
                 'num': '0123456789',
                 'position': "Position: Account Manager",
                 "image": "/static/private/managers/yhnxmk.jpg"
@@ -1175,7 +1175,7 @@ $(document).ready(function () {
                         color: darkred;
                         font-family: inherit;
                         margin: 20px 0;
-                    "> We at Ocowry aids both family, personal and corporate investors grow financially by granting loans. Contact any of the Support for further information and directives.</p>    
+                    "> We at example aids both family, personal and corporate investors grow financially by granting loans. Contact any of the Support for further information and directives.</p>    
                     <p style="
                         font-size: 17px;
                         text-align: center;
@@ -1187,7 +1187,7 @@ $(document).ready(function () {
             text-align: center;
             font-size: 16px;
             color: black;
-        ">Whatsapp Contact Support  : <a href="https://wa.me/message/3VHNQAIJ4BB4B1" style="text-decoration: underline;color: #2828a9;padding: 5px;pointer-events: unset !important;">https://wa.me/message/3VHNQAIJ4BB4B1</a> or +1-415-952-5508</p>   
+        ">Whatsapp Contact Support  : <a href="https://wa.me/message/**********" style="text-decoration: underline;color: #2828a9;padding: 5px;pointer-events: unset !important;">https://wa.me/message/3VHNQAIJ4BB4B1</a> or +1-415-952-5508</p>   
             </div>
         </div>
     </div>
